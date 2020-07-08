@@ -8,12 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-
     public WebDriver wd;
 
+
+    private ContactHelper contactHelper;
     private SessionHelper sessionHelper;
-    private  NavigationHelper navigationHelper;
-    private  GroupHelper groupHelper;
+    private NavigationHelper navigationHelper;
+    private GroupHelper groupHelper;
 
     public void init() {
         String pathToChromeDriver = System.getProperty("user.home") + "/Documents/webdrivers/chromedriver";
@@ -21,26 +22,23 @@ public class ApplicationManager {
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/group.php");
-        sessionHelper =new SessionHelper(wd);
+        sessionHelper = new SessionHelper(wd);
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
+        contactHelper = new ContactHelper(wd);
         sessionHelper.login("admin", "secret");
+
     }
 
-
-    public void stop() {
-        wd.quit();
-    }
 
     public boolean isElementPresent(By by) {
         try {
-           wd.findElement(by);
+            wd.findElement(by);
             return true;
         } catch (NoSuchElementException e) {
             return false;
         }
     }
-
 
 
     public GroupHelper getGroupHelper() {
@@ -56,4 +54,7 @@ public class ApplicationManager {
     }
 
 
+    public ContactHelper getContactHelper() {
+        return contactHelper;
+    }
 }
