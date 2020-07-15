@@ -117,4 +117,32 @@ public class ContactHelper extends HelperBase {
         type(firstname, fullNameForm.getFirstname());
 
     }
+
+    public void goHomePage() {
+        click(By.linkText("home"));
+    }
+
+    public void selectCheckbox() {
+        click(By.name("selected[]"));
+    }
+
+    public void addressDeletion() {
+        click(By.xpath("//input[@value='Delete']"));
+
+    }
+    public void closeConfirmDialog(){
+        wd.switchTo().alert().accept();
+    }
+
+    public void selectDetails() {
+        click(By.xpath("//img[@alt='Details']"));
+    }
+
+    public void selectModification(){
+        click(By.name("modifiy"));
+    }
+
+    public void selectUpdate(){
+        click(By.name("update"));
+    }
 }
