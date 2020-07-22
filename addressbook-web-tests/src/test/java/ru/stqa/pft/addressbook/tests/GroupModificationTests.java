@@ -13,8 +13,5 @@ public class GroupModificationTests extends TestBase{
         app.getGroupHelper().fillGroupForm(new GroupData("Luna", "Spanish", "corazón"));
         app.getGroupHelper().submitGroupModification();
         app.getGroupHelper().returnToGroupPage();
-
-
-
     }
 }

@@ -6,7 +6,6 @@ public class AddressDeletionTest extends TestBase {
 
     @Test
     public void testAddressDeletion(){
-        app.getContactHelper();
         app.getContactHelper().goHomePage();
         app.getContactHelper().selectCheckbox();
         app.getContactHelper().addressDeletion();

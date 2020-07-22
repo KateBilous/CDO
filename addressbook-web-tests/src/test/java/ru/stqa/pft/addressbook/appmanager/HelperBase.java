@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 public class HelperBase {
     protected WebDriver wd;
 
-
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
@@ -22,6 +21,7 @@ public class HelperBase {
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
     }
+
     public boolean isAlertPresent() {
         try {
             wd.switchTo().alert();
@@ -30,8 +30,6 @@ public class HelperBase {
             return false;
         }
     }
-
-
 
     private void fillbdayform(String bday) {
         new Select(wd.findElement(By.name("bday"))).selectByVisibleText(bday);
