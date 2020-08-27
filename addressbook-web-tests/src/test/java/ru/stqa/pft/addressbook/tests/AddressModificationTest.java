@@ -13,7 +13,8 @@ public class AddressModificationTest extends TestBase {
         app.getContactHelper().selectModification();
         app.getContactHelper().fillContactDataForm(new ContactData("my Company",
                 "forest", "Gamp", "0999999999", "SpaceX","00000000",
-                "uruuru@uru.com", "wiki_wiki@wiki.com", "LA", "888888"));
+                "uruuru@uru.com", "wiki_wiki@wiki.com", "LA", "888888", null),
+                false);
         app.getContactHelper().selectUpdate();
     }
 }

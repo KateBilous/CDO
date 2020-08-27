@@ -14,7 +14,7 @@ public class AddressCreationTests extends TestBase {
         app.getContactHelper().fillContactDataForm(
                 new ContactData("none", "none", "0999999999", "0888888888", "none",
                         "none", "smth_smth@smth.com", "smth1-smth1@smth.com", "USA",
-                        "smth street"));
+                        "smth street", "test1"),true);
         app.getContactHelper().fillBdayForm("4", "March", "1993");
         app.getContactHelper().submitAddressCreation();
     }
